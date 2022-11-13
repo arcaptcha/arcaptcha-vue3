@@ -1,4 +1,4 @@
-# ARCaptcha Vue
+# ARCaptcha Vue3
 
 ARCaptcha Component Library for Vue3.
 
@@ -27,7 +27,7 @@ import arcaptchaVue3 from "arcaptcha-vue3";
 
 | Name | Values/Type | Required	| Default	 | Description |
 |--------|--------|--------|--------|--------|
-|    site-key    |    string   |    Yes   |    -   |    This is your sitekey, this allows you to load captcha. If you need a sitekey, please visit [Arcaptcha](https://arcaptcha.ir/sign-up), and sign up to get your sitekey   |
+|    site_key    |    string   |    Yes   |    -   |    This is your sitekey, this allows you to load captcha. If you need a sitekey, please visit [Arcaptcha](https://arcaptcha.ir/sign-up), and sign up to get your sitekey   |
 |    invisible    |    Boolean    |  NO  |  False | This allows you to use invisible captcha for you forms |
 |    lang    |    string    |  NO  |  fa  | This allows you to choose language by this prop. you can choose 'en' or 'fa' for english and persion language | 
 |    theme    |    string    |  NO  |  light  | This allows you to choose theme for your widget. The themes are light and dark  | 
