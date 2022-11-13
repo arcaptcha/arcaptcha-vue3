@@ -3,15 +3,15 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 
 export default [
   {
-    input: 'src/index.js',
+    input: 'src/arcaptchaVue3.vue',
     output: [
       {
         format: 'cjs',
-        file: 'dist/library.mjs'
+        file: 'dist/arcaptcha-vue.mjs'
       },
       {
         format: 'cjs',
-        file: 'dist/library.js'
+        file: 'dist/arcaptcha-vue.js'
       }
     ],
     plugins: [

@@ -1,9 +1,9 @@
 <script setup>
-import arcaptchaVue3 from "./arcaptchaVue3.vue";
+import { arcaptchaVue3 } from "./export.js";
 </script>
 
 <template>
   <div>
-    <arcaptchaVue3 site_key="bdopsptc2b"></arcaptchaVue3>
+    <arcaptchaVue3></arcaptchaVue3>
   </div>
 </template>

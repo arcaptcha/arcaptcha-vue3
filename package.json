@@ -1,12 +1,39 @@
 {
   "name": "arcaptcha-vue3",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "description": "ARCaptcha vue3 component",
+  "author": "ARCaptcha team and contributors",
+  "homepage": "https://github.com/arcaptcha/arcaptcha-vue3",
+  "organization": "ARCaptcha",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arcaptcha/arcaptcha-vue3.git",
+    "web": "https://github.com/arcaptcha/arcaptcha-vue3"
+  },
   "scripts": {
     "dev": "vite",
-    "build": "rollup -c",
+    "build": "rm -rf dist && rollup -c",
     "preview": "vite preview"
   },
+  "bugs": {
+    "url": "https://github.com/arcaptcha/arcaptcha-vue3/issues"
+  },
+  "keywords": [
+    "aracptcha",
+    "captcha",
+    "component",
+    "vue3",
+    "vue3-component"
+  ],
+  "main": "src/arcaptchaVue3.vue",
+  "module": "src/arcaptchaVue3.vue",
+  "files": [
+    "src/arcaptchaVue3.vue"
+  ],
   "dependencies": {
+    "@babel/core": "^7.20.2",
+    "rollup-plugin-terser": "^7.0.2",
     "vue": "^3.2.41"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 <script>
-export default /*#__PURE__*/ {
-  name: "ArcaptchaVue",
+export default {
+  name: "ArcaptchaVue3",
   props: {
     value: {},
     site_key: {},
