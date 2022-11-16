@@ -119,7 +119,6 @@ export default {
       });
     },
     loadScript(url) {
-      //return new Promise(function (resolve) {
       var my_script = document.head.querySelector("#arcptcha-script");
       let script = my_script || document.createElement("script");
       script.src = url;
@@ -135,19 +134,17 @@ export default {
       if (my_script) {
         window.arcaptchaWidgetLoading.then(() => {
           this.initialize();
-          //resolve();
         });
       }
       if (!my_script) {
         document.head.appendChild(script);
       }
-      //   });
     },
     initialize() {
       this.loadCaptcha();
       addEventListener(
         `arcaptcha-token-changed-${this.widget_id}`,
-        (event, v) => {
+        (event, v) => { 
           this._value = event.detail;
         }
       );
@@ -155,7 +152,6 @@ export default {
   },
   mounted() {
     this.loadScript("https://widget.arcaptcha.ir/1/api.js");
-    //.then((res) => { });
   },
 };
 </script>

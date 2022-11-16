@@ -1,4 +1,4 @@
-# ARCaptcha Vue
+# ARCaptcha Vue3
 
 ARCaptcha Component Library for Vue3.
 
@@ -13,13 +13,28 @@ You can install this library via npm with:
   ```
 <script setup>
 import arcaptchaVue3 from "arcaptcha-vue3";
+
+function callbackDef() {
+  // This function would be called after solving captcha
+}
+function expired_callbackDef() {
+    //This function would be called after expiring
+}
 </script>
 
 <template>
   <div>
-    <arcaptchaVue3 site_key="YOUR_SITEKEY"></arcaptchaVue3>
+    <arcaptchaVue3
+      :callback="callbackDef"
+      :expired_callback="expired_callbackDef"
+      site_key="YOUR_SITE_KEY"
+    >
+    </arcaptchaVue3>
+
+    <!-- <arcaptchaVue3 site_key="bdopsptc2b"></arcaptchaVue3> -->
   </div>
 </template>
+
 
   ```
 
