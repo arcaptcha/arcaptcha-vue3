@@ -16,7 +16,5 @@ function expired_callbackDef() {
       site_key="bdopsptc2b"
     >
     </arcaptchaVue3>
-
-    <!-- <arcaptchaVue3 site_key="bdopsptc2b"></arcaptchaVue3> -->
   </div>
 </template>
