@@ -123,8 +123,8 @@ export default {
       let script = my_script || document.createElement("script");
       script.src = url;
       script.id = "arcptcha-script";
-      script.async=true;
-      script.defer=true;
+      script.async = true;
+      script.defer = true;
       if (!my_script) {
         window.arcaptchaWidgetLoading = new Promise((resolve, reject) => {
           script.onload = () => {
@@ -134,9 +134,7 @@ export default {
         });
       }
       if (my_script) {
-        window.arcaptchaWidgetLoading.then(() => {
-          this.initialize();
-        });
+        this.initialize();
       }
       if (!my_script) {
         document.head.appendChild(script);
@@ -146,7 +144,7 @@ export default {
       this.loadCaptcha();
       addEventListener(
         `arcaptcha-token-changed-${this.widget_id}`,
-        (event, v) => { 
+        (event, v) => {
           this._value = event.detail;
         }
       );
