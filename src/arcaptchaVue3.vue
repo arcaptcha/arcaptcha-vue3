@@ -13,6 +13,9 @@ export default {
     rendered_callback: {
       default: false,
     },
+    closed_callback: {
+      default: false,
+    },
     error_callback: {
       default: false,
     },
@@ -82,6 +85,9 @@ export default {
       if (this.rendered_callback)
         window[`arcaptcha_rendered_callback_${this.id}`] =
           this.rendered_callback;
+      if (this.closed_callback) {
+        window[`arcaptcha_closed_callback_${this.id}`] = this.closed_callback;
+      }
       if (this.error_callback)
         window[`arcaptcha_error_callback_${this.id}`] = this.error_callback;
       if (this.reset_callback)
@@ -103,6 +109,9 @@ export default {
         callback: this.callback ? `arcaptcha_callback_${this.id}` : null,
         rendered_callback: this.rendered_callback
           ? `arcaptcha_rendered_callback_${this.id}`
+          : null,
+        closed_callback: this.closed_callback
+          ? `arcaptcha_closed_callback_${this.id}`
           : null,
         error_callback: this.error_callback
           ? `arcaptcha_error_callback_${this.id}`
