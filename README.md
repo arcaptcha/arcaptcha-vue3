@@ -60,7 +60,7 @@ function expired_callbackDef() {
 | Method         | Description                                                                                                      |
 | -------------- | ---------------------------------------------------------------------------------------------------------------- |
 | execute()      | Programmatically trigger a challenge request. You can use this, to load invisible captcha after trigger a button |
-| resetCaptcha() | Reset the current challenge                                                                                      |
+| reset() | Reset the current challenge                                                                                      |
 
 ### How can I get a sitekey?
 
