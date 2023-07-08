@@ -1,5 +1,8 @@
-<script>
-export default {
+'use strict';
+
+var vue = require('vue');
+
+var script = {
   name: "ArcaptchaVue3",
   props: {
     value: {},
@@ -163,8 +166,17 @@ export default {
     this.loadScript("https://widget.arcaptcha.ir/1/api.js");
   },
 };
-</script>
 
-<template>
-  <div class="arcaptcha-vue" :id="this.id"></div>
-</template>
+const _hoisted_1 = ["id"];
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (vue.openBlock(), vue.createElementBlock("div", {
+    class: "arcaptcha-vue",
+    id: this.id
+  }, null, 8 /* PROPS */, _hoisted_1))
+}
+
+script.render = render;
+script.__file = "src/arcaptchaVue3.vue";
+
+module.exports = script;
