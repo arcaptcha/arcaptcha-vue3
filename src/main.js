@@ -1,4 +1,3 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import arcaptchaVue3 from "./arcaptchaVue3.vue";
 
-createApp(App).mount('#app')
+export default arcaptchaVue3;

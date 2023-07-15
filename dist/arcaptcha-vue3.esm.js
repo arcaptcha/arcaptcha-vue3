@@ -1,6 +1,4 @@
-'use strict';
-
-var vue = require('vue');
+import { openBlock, createElementBlock } from 'vue';
 
 var script = {
   name: "ArcaptchaVue3",
@@ -103,7 +101,7 @@ var script = {
     },
     loadCaptcha() {
       this.registerCallback();
-      this.widget_id = arcaptcha.render(`#${this.id}`, {
+      this.widget_id = arcaptcha.render(this.$refs.widget, {
         "site-key": this.site_key,
         size: this.invisible ? "invisible" : "",
         color: this.color,
@@ -135,7 +133,6 @@ var script = {
       let script = my_script || document.createElement("script");
       script.src = url;
       script.id = "arcptcha-script";
-      script.async = true;
       script.defer = true;
       if (!my_script) {
         window.arcaptchaWidgetLoading = new Promise((resolve, reject) => {
@@ -170,13 +167,14 @@ var script = {
 const _hoisted_1 = ["id"];
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (vue.openBlock(), vue.createElementBlock("div", {
+  return (openBlock(), createElementBlock("div", {
     class: "arcaptcha-vue",
-    id: this.id
+    id: this.id,
+    ref: "widget"
   }, null, 8 /* PROPS */, _hoisted_1))
 }
 
 script.render = render;
 script.__file = "src/arcaptchaVue3.vue";
 
-module.exports = script;
+export { script as default };
