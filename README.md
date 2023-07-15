@@ -8,9 +8,11 @@ You can install this library via npm with:
 
 - `npm i arcaptcha-vue3`
 
-#### Basic Usage
+#### Usage
 
-```
+- Basic:
+
+```javascript
 <script setup>
 import arcaptchaVue3 from "arcaptcha-vue3";
 
@@ -35,8 +37,94 @@ function expired_callbackDef() {
 </div>
 </template>
 
-
 ```
+- Invisible:
+```javascript
+<template>
+    <div>
+        <arcaptchaVue3 :callback="callbackDef" :expired_callback="expired_callbackDef" site_key="YOUR_SITE_KEY" :invisible="true" ref="widget"></arcaptchaVue3>
+    
+        <button @click="execute">Load invisible captcha</button>
+        <button @click="reset">reset invisible captcha</button>
+    </div>
+</template>
+  
+<script>
+import arcaptchaVue3 from "arcaptcha-vue3";
+import { ref } from 'vue'
+
+export default {
+    components: {
+        arcaptchaVue3
+    },
+    setup() {
+      const widget = ref(null)
+      return {widget}
+    },
+    methods: {
+        expired_callbackDef() {
+            //This method would be called after expiring
+        },
+        callbackDef(token) {
+            // This method would be called after solving captcha
+            console.log('Captcha Solved with token:', token)
+        },
+        execute() {
+            this.$refs.widget.execute();
+        },
+        reset() {
+          this.$refs.widget.reset();
+        },
+    }
+};
+</script>
+```
+
+
+- Invisible with promise:
+```javascript
+<template>
+  <div>
+    <arcaptchaVue3 :callback="callbackDef" :expired_callback="expired_callbackDef" site_key="YOUR_SITE_KEY" :invisible="true" ref="widget">               </arcaptchaVue3>
+    
+    <button @click="execute">Load invisible captcha</button>
+    <button @click="reset">reset invisible captcha</button>
+  </div>
+</template>
+  
+<script>
+  import arcaptchaVue3 from "arcaptcha-vue3";
+  import { ref } from 'vue'
+
+  export default {
+    components: {
+        arcaptchaVue3
+    },
+    setup() {
+      const widget = ref(null)
+      return {widget}
+    },
+    methods: {
+        expired_callbackDef() {
+            //This method would be called after expiring
+        },
+        callbackDef() {
+            // This method would be called after solving captcha
+        },
+        execute() {
+            this.$refs.widget.execute().then((token) => {
+                console.log("Captcha Solved! token:", token);
+            });
+        },
+        reset() {
+          this.$refs.widget.reset();
+        },
+      }
+    };
+</script> 
+
+  ```
+
 
 ## Props
 
