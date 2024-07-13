@@ -38,17 +38,19 @@ function expired_callbackDef() {
 </template>
 
 ```
+
 - Invisible:
+
 ```javascript
 <template>
     <div>
         <arcaptchaVue3 :callback="callbackDef" :expired_callback="expired_callbackDef" site_key="YOUR_SITE_KEY" :invisible="true" ref="widget"></arcaptchaVue3>
-    
+
         <button @click="execute">Load invisible captcha</button>
         <button @click="reset">reset invisible captcha</button>
     </div>
 </template>
-  
+
 <script>
 import arcaptchaVue3 from "arcaptcha-vue3";
 import { ref } from 'vue'
@@ -80,18 +82,18 @@ export default {
 </script>
 ```
 
-
 - Invisible with promise:
+
 ```javascript
 <template>
   <div>
     <arcaptchaVue3 :callback="callbackDef" :expired_callback="expired_callbackDef" site_key="YOUR_SITE_KEY" :invisible="true" ref="widget">               </arcaptchaVue3>
-    
+
     <button @click="execute">Load invisible captcha</button>
     <button @click="reset">reset invisible captcha</button>
   </div>
 </template>
-  
+
 <script>
   import arcaptchaVue3 from "arcaptcha-vue3";
   import { ref } from 'vue'
@@ -121,10 +123,9 @@ export default {
         },
       }
     };
-</script> 
+</script>
 
-  ```
-
+```
 
 ## Props
 
@@ -143,12 +144,18 @@ export default {
 | expired_callback    | Function    | NO       | null    | This function would be called after expiring                                                                                                                          |
 | chlexpired_callback | Function    | NO       | null    | This function would be called after challange expiration                                                                                                              |
 
+## Events
+
+| Name    | Description                                                                 |
+| ------- | --------------------------------------------------------------------------- |
+| onError | If there is any issue with loading `api.js` file this event will be emitted |
+
 ## Methods
 
-| Method         | Description                                                                                                      |
-| -------------- | ---------------------------------------------------------------------------------------------------------------- |
-| execute()      | Programmatically trigger a challenge request. You can use this, to load invisible captcha after trigger a button |
-| reset() | Reset the current challenge                                                                                      |
+| Method    | Description                                                                                                      |
+| --------- | ---------------------------------------------------------------------------------------------------------------- |
+| execute() | Programmatically trigger a challenge request. You can use this, to load invisible captcha after trigger a button |
+| reset()   | Reset the current challenge                                                                                      |
 
 ### How can I get a sitekey?
 

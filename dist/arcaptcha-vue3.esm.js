@@ -5,6 +5,9 @@ var script = {
   props: {
     value: {},
     site_key: {},
+    api_url: {
+      default: "https://widget.arcaptcha.ir/1/api.js",
+    },
     invisible: {
       default: false,
     },
@@ -140,6 +143,11 @@ var script = {
             // resolve();
             this.initialize();
           };
+
+          script.onerror = () => {
+            this.$emit("onError");
+            reject();
+          };
         });
       }
       if (my_script) {
@@ -160,7 +168,7 @@ var script = {
     },
   },
   mounted() {
-    this.loadScript("https://widget.arcaptcha.ir/1/api.js");
+    this.loadScript(this.api_url);
   },
 };
 
