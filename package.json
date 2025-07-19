@@ -20,7 +20,7 @@
     "url": "https://github.com/arcaptcha/arcaptcha-vue3/issues"
   },
   "keywords": [
-    "aracptcha",
+    "arcaptcha",
     "captcha",
     "component",
     "vue3",
@@ -29,9 +29,11 @@
   "main": "dist/arcaptcha-vue3.ssr.js",
   "browser": "dist/arcaptcha-vue3.esm.js",
   "module": "dist/arcaptcha-vue3.esm.js",
+  "types": "types/index.d.ts",
   "files": [
-    "src/*",
-    "dist/*"
+    "dist/*",
+    "types/*",
+    "README.md"
   ],
   "peerDependencies": {
     "vue": "^3.3.4"
